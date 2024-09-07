@@ -28,8 +28,8 @@ def main():
         pygame.display.flip()
 
         #Update at 60 FPS
-        time_since_called = clock.tick(60) #(s)
-        dt = time_since_called / 1000 #(ms)
+        time_since_called = clock.tick(60) #(seconds)
+        dt = time_since_called / 1000 #(milliseconds)
 
 if __name__ == "__main__":
     main()
