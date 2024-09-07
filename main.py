@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import *
 
 def main():
     #Initialze the pygame
@@ -12,6 +13,9 @@ def main():
     #Create display screen
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    #Create a player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
+
     while True:
         #This allows the ability close the pygame window via the 'x' in the window
         for event in pygame.event.get():
@@ -20,6 +24,9 @@ def main():
             
         #Fills the pygame display with a black background
         screen.fill((0,0,0))
+
+        #Draw the player object 
+        player.draw(screen)
 
         #Updates the pygame display each iteration
         pygame.display.flip()
