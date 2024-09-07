@@ -14,7 +14,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     #Create a player object
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     while True:
         #This allows the ability close the pygame window via the 'x' in the window
@@ -27,6 +27,9 @@ def main():
 
         #Draw the player object 
         player.draw(screen)
+
+        #Update player position
+        player.update(dt)
 
         #Updates the pygame display each iteration
         pygame.display.flip()
