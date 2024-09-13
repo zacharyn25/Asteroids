@@ -50,6 +50,11 @@ def main():
         for object in updatable:
             object.update(dt)
 
+        #Iterate over all Asteroids in the AsteroidField
+        for asteroid in asteroids:
+            if (asteroid.checkCollision(player)):
+                raise SystemExit("Game Over!")
+                
         #Fills the pygame display with a black background
         screen.fill((0,0,0))
 
