@@ -7,7 +7,6 @@ from asteroidfield import *
 def main():
     #Initialze the pygame
     pygame.init()
-
     #Create Clock Object 
     clock = pygame.time.Clock()
     dt = 0 #delta time
@@ -24,6 +23,9 @@ def main():
 
     #Group for all Asteroids
     asteroids = pygame.sprite.Group()
+
+    #Group for all Shots
+    shots = pygame.sprite.Group()
     
     #Add the groups to the Player Class
     Player.containers = (updatable, drawable)
@@ -33,6 +35,9 @@ def main():
 
     #Add group to AsteroidField Class
     AsteroidField.containers = (updatable)
+
+    #Add groups to Shot Class
+    Shot.containers = (shots, updatable, drawable)
 
     #Create a player object
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
