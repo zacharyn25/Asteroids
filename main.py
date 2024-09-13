@@ -1,6 +1,8 @@
 import pygame
 from constants import *
 from player import *
+from asteroid import *
+from asteroidfield import *
 
 def main():
     #Initialze the pygame
@@ -19,12 +21,24 @@ def main():
     
     #All groups that are drawable
     drawable = pygame.sprite.Group()
+
+    #Group for all Asteroids
+    asteroids = pygame.sprite.Group()
     
     #Add the groups to the Player Class
     Player.containers = (updatable, drawable)
 
+    #Add the groups to the Asteroid Class
+    Asteroid.containers = (asteroids, updatable, drawable)
+
+    #Add group to AsteroidField Class
+    AsteroidField.containers = (updatable)
+
     #Create a player object
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+    #Create AsteroidField 
+    asteroidfield = AsteroidField()
 
     while True:
         #This allows the ability close the pygame window via the 'x' in the window
