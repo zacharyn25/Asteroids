@@ -59,6 +59,12 @@ def main():
         for asteroid in asteroids:
             if (asteroid.checkCollision(player)):
                 raise SystemExit("Game Over!")
+            
+            #Iterate over all shots
+            for shot in shots:
+                if(asteroid.checkCollision(shot)):
+                    asteroid.kill()
+                    shot.kill()
                 
         #Fills the pygame display with a black background
         screen.fill((0,0,0))
